@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const MovieListHeading = (props) => {
-	return (
-		<div className='col'>
-			<h1>{props.heading}</h1>
-		</div>
-	);
+  var cardStyle = {
+    marginLeft: "1.5rem",
+  };
+  return (
+    <div style={cardStyle}>
+      <h1>{props.heading}</h1>
+    </div>
+  );
 };
 
 export default MovieListHeading;

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import AppBar from "../src/components/AppBar";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
-import AddFavourites from "./components/AddFavourites";
-import RemoveFavourites from "./components/RemoveFavourites";
-import FavouriteList from "./FavouriteList";
+import FavouriteList from "../src/components/FavouriteList";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -58,17 +56,14 @@ const App = () => {
   };
 
   return (
-    <div className="container-fluid movie-app">
+    <div className="app_background">
+      <AppBar />
       <div>
-        <MovieListHeading heading="Movies" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+        <MovieListHeading heading="Movies" />
       </div>
       <div className="row">
-        <MovieList
-          movies={movies}
-          handleFavouritesClick={addFavouriteMovie}
-          favouriteComponent={AddFavourites}
-        />
+        <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} />
       </div>
       <div>
         <MovieListHeading heading="Favourites" />
@@ -77,7 +72,6 @@ const App = () => {
         <FavouriteList
           movies={favourites}
           handleFavouritesClick={removeFavouriteMovie}
-          favouriteComponent={RemoveFavourites}
         />
       </div>
     </div>
