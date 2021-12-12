@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import AppBar from "../src/components/AppBar";
+//import AppBar from "../src/components/AppBar";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
@@ -57,8 +57,8 @@ const App = () => {
 
   return (
     <div className="app_background">
-      <AppBar />
-      <div>
+      {/* <AppBar /> */}
+      <div className="searchbox">
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         <MovieListHeading heading="Movies" />
       </div>

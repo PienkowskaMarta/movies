@@ -9,16 +9,9 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
 const FavouriteList = (props) => {
-  //const [value, setValue] = React.useState();
-
   return (
     <>
-      <Grid
-        container
-        direction="row"
-        justify="flex-start"
-        alignItems="flex-start"
-      >
+      <Grid container direction="row" justifyContent="center">
         {props.movies.map((movie, index) => (
           <div>
             <Card sx={{ maxWidth: 345, margin: "5px" }}>
@@ -33,22 +26,10 @@ const FavouriteList = (props) => {
                   {movie.Title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {movie.Year}
+                  year of release:{movie.Year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {movie.Type}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <Typography variant="body2">Rate this film</Typography>
-                  <Rating name="customized-10" defaultValue={5} max={10} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <input
-                    id={movie.imdbID}
-                    type="checkbox"
-                    defaultChecked={false}
-                  />
-                  <label>Watched</label>
                 </Typography>
               </CardContent>
               <CardActions>
@@ -68,5 +49,3 @@ const FavouriteList = (props) => {
 };
 
 export default FavouriteList;
-
-

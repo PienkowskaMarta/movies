@@ -3,22 +3,28 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 const SearchBox = (props) => {
+  const inputStyle = {
+    WebkitBoxShadow: "0 0 0 1000px white inset",
+    height: "3rem",
+    paddingLeft: "1.5rem",
+  };
   return (
     <Box
       component="form"
-      sx={{
-        marginLeft: "40%",
-        marginTop: "4rem",
-      }}
       noValidate
       autoComplete="off"
+      display="flex"
+      justifyContent="center"
     >
       <TextField
         id="outlined-basic"
-        label="Search movie..."
-        variant="outlined"
+        variant="standard"
         value={props.value}
         onChange={(event) => props.setSearchValue(event.target.value)}
+        inputProps={{ style: inputStyle }}
+        sx={{ width: "35ch" }}
+        placeholder="Search movie..."
+        padding="2px 2px 2px 2px"
       />
     </Box>
   );

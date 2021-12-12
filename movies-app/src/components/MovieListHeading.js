@@ -2,7 +2,11 @@ import React from "react";
 
 const MovieListHeading = (props) => {
   var cardStyle = {
-    marginLeft: "1.5rem",
+    textAlign: "center",
+    marginTop: "5.5rem",
+    marginBottom: "5.5rem",
+    fontSize: "1.3rem",
+    textTransform: "uppercase",
   };
   return (
     <div style={cardStyle}>

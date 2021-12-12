@@ -1,1 +1,8 @@
+* {
+  font-family: "Bebas Neue", cursive;
+  font-family: "Readex Pro", sans-serif;
+}
 
+.searchbox {
+  margin-top: 3rem;
+}
