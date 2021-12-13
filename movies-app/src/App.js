@@ -5,6 +5,7 @@ import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import FavouriteList from "../src/components/FavouriteList";
+import background from "./images/cover2.jpg";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -58,6 +59,14 @@ const App = () => {
   return (
     <div className="app_background">
       {/* <AppBar /> */}
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+          height: "29rem",
+          backgroundRepeat: "no-repeat",
+          WebkitBackgroundSize: "cover",
+        }}
+      ></div>
       <div className="searchbox">
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         <MovieListHeading heading="Movies" />

@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const MovieList = (props) => {
   return (
@@ -13,7 +14,14 @@ const MovieList = (props) => {
       <Grid container direction="row" display="flex" justifyContent="center">
         {props.movies.slice(0, 20).map((movie, index) => (
           <div>
-            <Card sx={{ maxWidth: 345, margin: "5px" }}>
+            <Card
+              style={{
+                border: "none",
+                boxShadow: "none",
+                maxWidth: 345,
+                margin: "5px",
+              }}
+            >
               <CardMedia
                 component="img"
                 height="340"
@@ -30,6 +38,7 @@ const MovieList = (props) => {
                   size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
                 >
+                  <FavoriteIcon sx={{ color: "#FF6666" }} />
                   Add to favourites
                 </Button>
               </CardActions>

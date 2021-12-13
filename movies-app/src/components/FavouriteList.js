@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const FavouriteList = (props) => {
   return (
@@ -14,7 +15,14 @@ const FavouriteList = (props) => {
       <Grid container direction="row" justifyContent="center">
         {props.movies.map((movie, index) => (
           <div>
-            <Card sx={{ maxWidth: 345, margin: "5px" }}>
+            <Card
+              style={{
+                border: "none",
+                boxShadow: "none",
+                maxWidth: 345,
+                margin: "5px",
+              }}
+            >
               <CardMedia
                 component="img"
                 height="340"
@@ -37,6 +45,7 @@ const FavouriteList = (props) => {
                   size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
                 >
+                  <DeleteIcon sx={{ color: "black" }} />
                   Remove from favourites
                 </Button>
               </CardActions>
