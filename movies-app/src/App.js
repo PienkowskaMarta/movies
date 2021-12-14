@@ -7,6 +7,8 @@ import SearchBox from "./components/SearchBox";
 import FavouriteList from "../src/components/FavouriteList";
 import background from "./images/cover2.jpg";
 
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -59,23 +61,57 @@ const App = () => {
   return (
     <div className="app_background">
       {/* <AppBar /> */}
+      <Parallax pages={2} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer
+          offset={0}
+          speed={2.5}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p style={{ fontSize: "3.3rem" }}>HELLO MOVIE FANS!</p>
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={1}
+          speed={2}
+          style={{ height: "100vh", backgroundColor: "#ff6d6d" }}
+        />
+
+        <ParallaxLayer
+          offset={1}
+          speed={0.5}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+          }}
+        >
+          <p style={{ fontSize: "2.3rem" }}>WHAT DO YOU WANNA WATCH?</p>
+        </ParallaxLayer>
+      </Parallax>
       <div
         style={{
-          backgroundImage: `url(${background})`,
-          height: "29rem",
-          backgroundRepeat: "no-repeat",
-          WebkitBackgroundSize: "cover",
+          // backgroundImage: `url(${background})`,
+          height: "100vh",
+          backgroundColor: "#008383",
+          // backgroundRepeat: "no-repeat",
+          // WebkitBackgroundSize: "cover",
         }}
       ></div>
       <div className="searchbox">
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        <MovieListHeading heading="Movies" />
+        <MovieListHeading
+        // heading="Movies"
+        />
       </div>
       <div className="row">
         <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} />
       </div>
       <div>
-        <MovieListHeading heading="Favourites" />
+        <MovieListHeading heading="Favorites" />
       </div>
       <div className="row">
         <FavouriteList

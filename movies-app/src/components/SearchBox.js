@@ -8,6 +8,8 @@ const SearchBox = (props) => {
     WebkitBoxShadow: "0 0 0 1000px white inset",
     height: "3rem",
     paddingLeft: "1.5rem",
+    paddingTop: "70%",
+    fontSize: "1.5rem",
   };
   return (
     <Box
@@ -17,7 +19,7 @@ const SearchBox = (props) => {
       display="flex"
       justifyContent="center"
     >
-      <SearchIcon />
+      {/* <SearchIcon /> */}
       <TextField
         id="outlined-basic"
         variant="standard"
@@ -25,7 +27,7 @@ const SearchBox = (props) => {
         onChange={(event) => props.setSearchValue(event.target.value)}
         inputProps={{ style: inputStyle }}
         sx={{ width: "35ch" }}
-        placeholder="Search movie..."
+        placeholder="SEARCH MOVIE..."
         padding="2px 2px 2px 2px"
       />
     </Box>

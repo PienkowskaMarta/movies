@@ -11,7 +11,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 const MovieList = (props) => {
   return (
     <>
-      <Grid container direction="row" display="flex" justifyContent="center">
+      <Grid
+        container
+        direction="row"
+        display="flex"
+        justifyContent="center"
+        sx={{ marginTop: "15rem" }}
+      >
         {props.movies.slice(0, 20).map((movie, index) => (
           <div>
             <Card
@@ -38,8 +44,8 @@ const MovieList = (props) => {
                   size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
                 >
+                  Add to
                   <FavoriteIcon sx={{ color: "#FF6666" }} />
-                  Add to favourites
                 </Button>
               </CardActions>
             </Card>
