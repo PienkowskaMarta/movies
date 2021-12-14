@@ -35,7 +35,7 @@ const MovieList = (props) => {
                 image={movie.Poster}
                 alt="movie"
               />
-              <CardContent>
+              <CardContent sx={{ paddingBottom: "0" }}>
                 <Typography
                   gutterBottom
                   variant="body1"
