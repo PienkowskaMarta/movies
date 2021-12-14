@@ -26,6 +26,7 @@ const MovieList = (props) => {
                 boxShadow: "none",
                 maxWidth: 345,
                 margin: "5px",
+                backgroundColor: "#008383",
               }}
             >
               <CardMedia
@@ -35,7 +36,12 @@ const MovieList = (props) => {
                 alt="movie"
               />
               <CardContent>
-                <Typography gutterBottom variant="body1" component="div">
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  component="div"
+                  sx={{ textAlign: "center" }}
+                >
                   {movie.Title}
                 </Typography>
               </CardContent>
@@ -43,6 +49,7 @@ const MovieList = (props) => {
                 <Button
                   size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
+                  sx={{ color: "black", margin: "auto" }}
                 >
                   Add to
                   <FavoriteIcon sx={{ color: "#FF6666" }} />

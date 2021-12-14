@@ -21,6 +21,7 @@ const FavouriteList = (props) => {
                 boxShadow: "none",
                 maxWidth: 345,
                 margin: "5px",
+                backgroundColor: "#008383",
               }}
             >
               <CardMedia
@@ -44,6 +45,7 @@ const FavouriteList = (props) => {
                 <Button
                   size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
+                  sx={{ color: "black" }}
                 >
                   <DeleteIcon sx={{ color: "black" }} />
                   Remove from favourites
