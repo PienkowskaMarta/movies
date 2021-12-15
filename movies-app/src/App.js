@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 //import AppBar from "../src/components/AppBar";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import FavouriteList from "../src/components/FavouriteList";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import background from "./images/cover2.jpg";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -58,6 +59,8 @@ const App = () => {
     saveToLocalStorage(newFavouriteList);
   };
 
+  const scollToRef = useRef();
+
   return (
     <div className="app_background">
       {/* <AppBar /> */}
@@ -101,12 +104,14 @@ const App = () => {
           // WebkitBackgroundSize: "cover",
         }}
       ></div>
-      <div className="searchbox">
+
+      <div className="searchbox" ref={scollToRef}>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         <MovieListHeading
         // heading="Movies"
         />
       </div>
+
       <div className="row">
         <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} />
       </div>
@@ -119,6 +124,16 @@ const App = () => {
           handleFavouritesClick={removeFavouriteMovie}
         />
       </div>
+      <ArrowUpwardIcon
+        sx={{
+          transform: "scale(2.0)",
+          marginLeft: "3rem",
+          marginBottom: "3rem",
+        }}
+        onClick={() =>
+          scollToRef.current.scrollIntoView({ behavior: "smooth" })
+        }
+      />
     </div>
   );
 };
