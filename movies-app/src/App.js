@@ -6,7 +6,7 @@ import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import FavouriteList from "../src/components/FavouriteList";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import background from "./images/cover2.jpg";
+//import background from "./images/cover2.jpg";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
@@ -104,8 +104,8 @@ const App = () => {
           // WebkitBackgroundSize: "cover",
         }}
       ></div>
-
-      <div className="searchbox" ref={scollToRef}>
+      <div ref={scollToRef}></div>
+      <div className="searchbox">
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         <MovieListHeading
         // heading="Movies"
