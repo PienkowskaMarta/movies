@@ -31,21 +31,33 @@ const FavouriteList = (props) => {
                 alt="movie"
               />
               <CardContent>
-                <Typography gutterBottom variant="body1" component="div">
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  component="div"
+                  sx={{ textTransform: "uppercase", textAlign: "center" }}
+                >
                   {movie.Title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ textTransform: "uppercase", textAlign: "center" }}
+                >
                   release:{movie.Year}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ textTransform: "uppercase", textAlign: "center" }}
+                >
                   {movie.Type}
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button
-                  size="small"
                   onClick={() => props.handleFavouritesClick(movie)}
-                  sx={{ color: "black" }}
+                  sx={{ color: "black", margin: "auto" }}
                 >
                   <DeleteIcon sx={{ color: "black" }} />
                   Remove
