@@ -11,6 +11,7 @@
   /* width: 50%; */
 }
 
+/* movies hover */
 .image {
   display: block;
   width: 100%;
@@ -45,6 +46,8 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/* heart icon */
 .heart {
   fill: red;
   position: relative;
@@ -63,4 +66,91 @@
   100% {
     transform: scale(1);
   }
+}
+
+/* remove icon */
+
+.trash {
+  background: #ff6873;
+  width: 22px;
+  height: 27px;
+  display: inline-block;
+  margin: 0 auto;
+
+  position: relative;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.trash:after {
+  position: absolute;
+  left: -33px;
+  right: 0;
+  bottom: -17px;
+  width: 100px;
+}
+.trash span {
+  position: absolute;
+  height: 4px;
+  background: #ff6873;
+  top: -6px;
+  left: -3px;
+  right: -3px;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transform: rotate(0deg);
+  transition: transform 250ms;
+  transform-origin: 19% 100%;
+}
+.trash span:after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 2px;
+  background: #ff6873;
+  top: -3px;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transform: rotate(0deg);
+  transition: transform 250ms;
+  transform-origin: 19% 100%;
+  left: 9px;
+}
+
+.trash i {
+  position: relative;
+  width: 1px;
+  height: 17px;
+  background: #fff;
+  display: block;
+  margin: 6px auto;
+  border-radius: 2px;
+}
+.trash i:after {
+  content: "";
+  width: 1px;
+  height: 17px;
+  background: #fff;
+  position: absolute;
+  left: -6px;
+  border-radius: 2px;
+}
+.trash i:before {
+  content: "";
+  width: 1px;
+  height: 17px;
+  background: #fff;
+  position: absolute;
+  right: -6px;
+  border-radius: 2px;
+}
+
+.trash:hover span {
+  transform: rotate(-45deg);
+  transition: transform 250ms;
 }

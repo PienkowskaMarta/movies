@@ -7,7 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 const FavouriteList = (props) => {
   return (
@@ -33,9 +32,11 @@ const FavouriteList = (props) => {
               <CardContent>
                 <Typography
                   gutterBottom
-                  variant="body1"
                   component="div"
-                  sx={{ textTransform: "uppercase", textAlign: "center" }}
+                  sx={{
+                    textTransform: "uppercase",
+                    textAlign: "center",
+                  }}
                 >
                   {movie.Title}
                 </Typography>
@@ -59,8 +60,10 @@ const FavouriteList = (props) => {
                   onClick={() => props.handleFavouritesClick(movie)}
                   sx={{ color: "black", margin: "auto" }}
                 >
-                  <DeleteIcon sx={{ color: "black" }} />
-                  Remove
+                  <span class="trash">
+                    <span></span>
+                    <i></i>
+                  </span>
                 </Button>
               </CardActions>
             </Card>
