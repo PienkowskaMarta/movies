@@ -35,7 +35,7 @@ const FavouriteList = (props) => {
                   {movie.Title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  year of release:{movie.Year}
+                  release:{movie.Year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {movie.Type}
@@ -48,7 +48,7 @@ const FavouriteList = (props) => {
                   sx={{ color: "black" }}
                 >
                   <DeleteIcon sx={{ color: "black" }} />
-                  Remove from favourites
+                  Remove
                 </Button>
               </CardActions>
             </Card>

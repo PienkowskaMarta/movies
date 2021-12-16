@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
@@ -15,6 +14,7 @@ const MovieList = (props) => {
         {props.movies.slice(0, 20).map((movie, index) => (
           <div>
             <Card
+              className="container"
               style={{
                 border: "none",
                 boxShadow: "none",
@@ -28,27 +28,33 @@ const MovieList = (props) => {
                 height="340"
                 image={movie.Poster}
                 alt="movie"
+                className="image"
               />
-              <CardContent sx={{ paddingBottom: "0" }}>
+
+              <CardContent sx={{ paddingBottom: "0" }} className="overlay">
                 <Typography
+                  className="text"
                   gutterBottom
                   variant="body1"
                   component="div"
-                  sx={{ textAlign: "center" }}
+                  sx={{ textAlign: "center", fontSize: "1.5rem" }}
                 >
                   {movie.Title}
                 </Typography>
-              </CardContent>
-              <CardActions>
+
                 <Button
-                  size="small"
+                  size="large"
                   onClick={() => props.handleFavouritesClick(movie)}
-                  sx={{ color: "black", margin: "auto" }}
+                  sx={{
+                    color: "white",
+                    marginTop: "5rem",
+                    marginLeft: "37%",
+                    fontSize: "1.5rem",
+                  }}
                 >
-                  Add to
                   <FavoriteIcon sx={{ color: "#FF6666" }} />
                 </Button>
-              </CardActions>
+              </CardContent>
             </Card>
           </div>
         ))}
