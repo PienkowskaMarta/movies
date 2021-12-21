@@ -6,9 +6,24 @@ import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import FavouriteList from "../src/components/FavouriteList";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-//import background from "./images/cover2.jpg";
-
+import { makeStyles, useTheme, useMediaQuery } from "@material-ui/core";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "5rem",
+      fontSize: "3.3rem",
+    },
+  },
+  scroll: {
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      justifyContent: "right",
+      margin: "1rem 2rem 0 0 ",
+    },
+  },
+}));
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -60,6 +75,9 @@ const App = () => {
   };
 
   const scollToRef = useRef();
+  const classes = useStyles();
+  const theme = useTheme();
+  const mediaStyles = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <div className="app_background">
@@ -74,7 +92,10 @@ const App = () => {
             alignItems: "center",
           }}
         >
-          <p style={{ fontSize: "3.3rem" }}>HELLO MOVIE FANS!</p>
+          <div className={classes.root}>
+            <p style={{ fontSize: "3.3rem" }}>HELLO MOVIE FANS!</p>
+            {mediaStyles}
+          </div>
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}
@@ -92,48 +113,64 @@ const App = () => {
             color: "white",
           }}
         >
-          <p style={{ fontSize: "2.3rem" }}>WHAT DO YOU WANNA WATCH?</p>
+          <div className={classes.root}>
+            <p style={{ fontSize: "3.3rem" }}>WHAT DO YOU WANNA WATCH?</p>
+            {mediaStyles}
+          </div>
         </ParallaxLayer>
       </Parallax>
       <div
         style={{
-          // backgroundImage: `url(${background})`,
           height: "100vh",
           backgroundColor: "#008383",
-          // backgroundRepeat: "no-repeat",
-          // WebkitBackgroundSize: "cover",
         }}
       ></div>
       <div ref={scollToRef}></div>
       <div className="searchbox">
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        <MovieListHeading
-        // heading="Movies"
-        />
+        <MovieListHeading />
       </div>
 
       <div className="row">
         <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} />
       </div>
+      {/* <section>
+        <div>
+          <MovieListHeading heading="Our picks" />
+        </div>
+        <iframe
+          className="video"
+          width="560"
+          height="340"
+          src="https://www.youtube.com/embed/n9xhJrPXop4"
+        ></iframe>
+      </section> */}
+
       <div>
         <MovieListHeading heading="Favorites" />
       </div>
+
       <div className="row">
         <FavouriteList
           movies={favourites}
           handleFavouritesClick={removeFavouriteMovie}
         />
       </div>
-      <ArrowUpwardIcon
-        sx={{
-          transform: "scale(2.0)",
-          marginLeft: "3rem",
-          marginBottom: "3rem",
-        }}
-        onClick={() =>
-          scollToRef.current.scrollIntoView({ behavior: "smooth" })
-        }
-      />
+
+      <div className={classes.scroll}>
+        <ArrowUpwardIcon
+          sx={{
+            transform: "scale(2.0)",
+            marginLeft: "3rem",
+            marginBottom: "3rem",
+            textAlign: "center",
+          }}
+          onClick={() =>
+            scollToRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+        />
+        {mediaStyles}
+      </div>
     </div>
   );
 };
