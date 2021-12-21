@@ -8,11 +8,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.7rem",
-    },
+    
     "& input::placeholder": {
       fontSize: "1.5rem",
     },
-  },
+  }},
 }));
 
 const SearchBox = (props) => {

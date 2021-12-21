@@ -23,6 +23,13 @@ const useStyles = makeStyles((theme) => ({
       margin: "1rem 2rem 0 0 ",
     },
   },
+  trailer: {
+    [theme.breakpoints.down("xs")]: {
+      // width: "100%",
+      // height: "auto",
+      display: "none",
+    },
+  },
 }));
 
 const App = () => {
@@ -134,7 +141,8 @@ const App = () => {
       <div className="row">
         <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} />
       </div>
-      {/* <section>
+
+      <div className={classes.trailer}>
         <div>
           <MovieListHeading heading="Our picks" />
         </div>
@@ -142,9 +150,11 @@ const App = () => {
           className="video"
           width="560"
           height="340"
+          title="Dune"
           src="https://www.youtube.com/embed/n9xhJrPXop4"
         ></iframe>
-      </section> */}
+        {mediaStyles}
+      </div>
 
       <div>
         <MovieListHeading heading="Favorites" />

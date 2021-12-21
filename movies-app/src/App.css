@@ -8,7 +8,6 @@
 }
 .container {
   position: relative;
-  /* width: 50%; */
 }
 
 /* movies hover */
@@ -156,6 +155,6 @@
 }
 
 /* video */
-/* .video {
+.video {
   margin-left: 35%;
-} */
+}
